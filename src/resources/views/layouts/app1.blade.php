@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COACHTECHフリマ</title>
+    <title>フリマ</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/common1.css') }}">
     <script src="{{ mix('js/image_preview.js') }}" defer></script>
@@ -15,7 +15,7 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a class="header__logo" href="/"><img src="{{ asset('img/COACHTECH.svg') }}"></a>
+            <a class="header__logo" href="/">furima</a>
             <nav>
                 <ul class="header__nav">
                     <li class="header__nav-item">

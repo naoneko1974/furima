@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Item;
 use App\Models\Purchase;
@@ -21,22 +20,6 @@ class PurchaseController extends Controller
         $address = '';
         $building = '';
         return view('purchase',compact('users','items','payments', 'postcode', 'address', 'building'));
-    }
-
-    public function purchase_address($id,$payment_id){
-        $users = User::find(Auth::user()->id);
-        return view('purchase_address',compact('id','payment_id','users'));
-    }
-
-    public function address_update(PurchaseRequest $request){
-        $id = $request->id;
-        $users = User::find(Auth::user()->id);
-        $items = Item::find($request->id);
-        $payments = Payment::all();
-        $postcode = $request->postcode;
-        $address = $request->address;
-        $building = $request->building;
-        return view('purchase', compact('id','users', 'items', 'payments','postcode','address','building'));
     }
 
     public function purchase_store(PurchaseRequest $request){

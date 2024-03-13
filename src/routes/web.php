@@ -41,8 +41,6 @@ Route::middleware('auth')->group(function(){
     Route::get('/nice/{id}',[LikeController::class,'nice'])->name('nice');
     Route::get('/unnice/{id}', [LikeController::class, 'unnice'])->name('unnice');
     Route::get('/purchase/{id}',[PurchaseController::class,'purchase']);
-    Route::get('/purchase/purchase_address/{id}/{payment_id}',[PurchaseController::class,'purchase_address']);
-    Route::post('/purchase/address_update',[PurchaseController::class,'address_update']);
     Route::post('/purchase/purchase_store',[PurchaseController::class,'purchase_store']);
     Route::get('/purchase/purchase_done',[PurchaseController::class,'purchase_done']);
     Route::get('/comment/{id}',[CommentController::class,'comment']);

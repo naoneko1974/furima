@@ -73,10 +73,13 @@ h4 {
     margin-top:20px;
 }
 
+.purchase__address-detail span {
+    width:20px;
+    font-size: 13px;
+}
+
 .purchase__address-detail input {
     margin:5px;
-    border:none;
-    outline:none;
     font-size: 13px;
 }
 

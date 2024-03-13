@@ -41,13 +41,14 @@
             <div class="purchase__address">
                 <h4>配送先</h4>
                 <div class="purchase__address-detail">
+                    <span>〒</span>
                     @if(!empty($postcode))
-                    <input type="text" name="postcode" value="{{ $postcode }}" readonly>
+                    <input type="text" name="postcode" id="郵便番号" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" value="{{ $postcode }}">
                     @else
                     @if(!empty($users->profile->postcode))
-                    <input type="text" name="postcode" value="{{ $users->profile->postcode }}" readonly>
+                    <input type="text" name="postcode" id="郵便番号" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" value="{{ $users->profile->postcode }}">
                     @else
-                    <input type="text" name="postcode" value="" placeholder="未登録" readonly>
+                    <input type="text" name="postcode" id="郵便番号" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');" value="" placeholder="未登録">
                     @endif
                     @endif
                     <div class="form__error">
@@ -55,13 +56,14 @@
                         {{ $message }}
                         @enderror
                     </div>
+                    <span>住所</span>
                     @if(!empty($address))
-                    <input type="text" name="address" value="{{ $address }}" readonly>
+                    <input type="text" name="address" id="住所" value="{{ $address }}">
                     @else
                     @if(!empty($users->profile->address))
-                    <input type="text" name="address" value="{{ $users->profile->address }}" readonly>
+                    <input type="text" name="address" id="住所" value="{{ $users->profile->address }}">
                     @else
-                    <input type="text" name="address" value="" placeholder="未登録" readonly>
+                    <input type="text" name="address" id="住所" value="" placeholder="未登録">
                     @endif
                     @endif
                     <div class="form__error">
@@ -69,13 +71,14 @@
                         {{ $message }}
                         @enderror
                     </div>
+                    <span>建物</span>
                     @if(!empty($building))
-                    <input type="text" name="building" value="{{ $building }}" readonly>
+                    <input type="text" name="building" value="{{ $building }}">
                     @else
                     @if(!empty($users->profile->building))
-                    <input type="text" name="building" value="{{ $users->profile->building }}" readonly>
+                    <input type="text" name="building" value="{{ $users->profile->building }}">
                     @else
-                    <input type="text" name="building" value="" placeholder="未登録" readonly>
+                    <input type="text" name="building" value="" placeholder="未登録">
                     @endif
                     @endif
                     <div class="form__error">
@@ -83,9 +86,6 @@
                         {{ $message }}
                         @enderror
                     </div>
-                </div>
-                <div class="address__change">
-                    <a class="address__change-link" href="/purchase/purchase_address/{{ $items->id }}/{{ $payment->id }}">変更する</a>
                 </div>
             </div>
         </div>
